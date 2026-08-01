@@ -74,12 +74,7 @@ Large binary files (trajectories, full parameter sets, checkpoint files; several
 
 ## Citation
 
-If you use this pipeline or its results, please cite this repository (see `CITATION.cff`, to be added) and the associated manuscript (in preparation).
-
-## License
-
-Code in this repository is released under the MIT License (see `LICENSE`). Simulation input structures derive from publicly available AlphaFold models and PDB entry 1FSL.
 
 ## Contact
 
-[Your name / email / lab affiliation]
+[Mohammad Hossein Pakdel / mhpakdel96@gmail.com]
