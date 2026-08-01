@@ -5,39 +5,28 @@ Molecular dynamics (MD) simulation pipeline investigating the effect of site-dir
 ## Pipeline Overview
 
 ```mermaid
-flowchart TD
-    subgraph PREP["Structure Preparation"]
-        A["AlphaFold2 Model<br/><i>P. sativum / O. spinosa</i>"] --> B["Heme Docking<br/><sub>PyMOL, 1FSL template</sub>"]
-        B --> C["System Build<br/><sub>CHARMM-GUI Solution Builder</sub>"]
-    end
+---
+title: Leghemoglobin Heme/O2 Stability — MD Pipeline
+---
+flowchart LR
+    A(["🧬  AlphaFold<br/>Model"]) --> B(["⚗️  Heme<br/>Docking"])
+    B --> C(["💧  System Build<br/><sub>CHARMM-GUI</sub>"])
+    C --> D(["🔧  Topology<br/>Repair"])
+    D --> E(["⚡  MD Production<br/><sub>100 ns · GROMACS</sub>"])
+    E --> F(["📊  Stability<br/>Analysis"])
 
-    subgraph TOPO["Topology Repair"]
-        C --> D["Topology Conversion<br/><sub>ParmEd, CHARMM36m</sub>"]
-        D --> E["Manual Fixes<br/><sub>chain-junction · O2 ligand</sub>"]
-    end
-
-    subgraph MD["Molecular Dynamics"]
-        E --> F["Minimization"]
-        F --> G["Equilibration<br/><sub>NVT · 298.15 K</sub>"]
-        G --> H["Production<br/><sub>NPT · 100 ns · GROMACS/GPU</sub>"]
-    end
-
-    subgraph OUT["Analysis"]
-        H --> I["Trajectory Analysis<br/><sub>MDAnalysis · RMSD · bond distance</sub>"]
-        I --> J["Stability Comparison<br/><sub>WT vs. mutants · ± O2</sub>"]
-    end
-
-    classDef prep fill:#eef2f7,stroke:#4a6fa5,stroke-width:1.5px,color:#1a2b3c;
-    classDef topo fill:#fdf3e7,stroke:#c8802d,stroke-width:1.5px,color:#3c2a12;
-    classDef md fill:#eaf5ee,stroke:#3a8a5a,stroke-width:1.5px,color:#0f2e1a;
-    classDef out fill:#f3edf7,stroke:#7d4d9e,stroke-width:1.5px,color:#2b1a3c;
+    classDef prep fill:#EAF1FB,stroke:#3E6BB5,stroke-width:2px,color:#12233F,font-weight:600;
+    classDef topo fill:#FDF1E3,stroke:#D08A34,stroke-width:2px,color:#3C2A12,font-weight:600;
+    classDef md   fill:#E8F6EC,stroke:#3C9459,stroke-width:2px,color:#0F2E1A,font-weight:600;
+    classDef out  fill:#F3EAF9,stroke:#8B4FB0,stroke-width:2px,color:#2B1A3C,font-weight:600;
 
     class A,B,C prep
-    class D,E topo
-    class F,G,H md
-    class I,J out
-```
+    class D topo
+    class E md
+    class F out
 
+    linkStyle default stroke:#9AA5B1,stroke-width:2px;
+```
 ## Overview
 
 This repository contains the complete computational pipeline — structure preparation, topology generation, custom force-field patching, production MD, and trajectory analysis — used to compare heme-binding stability across wild-type and mutant leghemoglobin variants, both in the ligand-free (deoxy) state and with molecular oxygen bound at the heme iron (oxy state).
