@@ -78,11 +78,11 @@ Full protocol with exact commands: [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md).
 
 ## Key Findings (preliminary — see caveats)
 
-- Single point mutations improved heme-pocket stability (lower RMSD) relative to wild type in both species; the double mutant in *P. sativum* showed a negative epistatic effect (less stable than either single mutant).
-- All systems maintained a stable Fe–O2 bond (~1.80 Å) throughout 100 ns production, indicating no gross functional impairment.
-- The stability ranking observed in the deoxy (heme-only) state was **not preserved** upon O2 binding — mutants that outperformed wild type without O2 lost this advantage (or underperformed) once O2 was bound.
+- Both species show a mirrored, opposite-direction epistatic pattern: in *P. sativum*, single mutations improve heme-pocket stability while the double mutant is worse than either (negative epistasis); in *O. spinosa*, single mutations reduce stability while the double mutant is the most stable variant (positive epistasis).
+- All systems maintained a stable Fe–O2 bond (~1.80 Å) throughout 100 ns production, indicating no gross functional impairment in any genotype tested.
+- WT systems in both species became more stable upon O2 binding, while the tested mutants (V83T, F125W) became less stable — suggesting mutation effects favorable in the deoxy state do not necessarily transfer to the O2-bound, functional state.
 
-**Caveats:** results are based on a single 100 ns replicate per system; AlphaFold-derived (non-experimental) starting structures were used. See [`docs/RESULTS_SUMMARY.md`](docs/RESULTS_SUMMARY.md) for full discussion and literature comparison.
+**Caveats:** results are based on a single 100 ns replicate per system; AlphaFold-derived (non-experimental) starting structures were used; an initial *O. spinosa* topology defect (see `docs/KNOWN_ISSUES_AND_FIXES.md`) was identified and corrected, which substantially changed the *O. spinosa* deoxy-state ranking — see `docs/RESULTS_SUMMARY.md` for the full revision note. See `docs/RESULTS_SUMMARY.md` for complete discussion and literature comparison.
 
 ## Data Availability
 
