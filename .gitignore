@@ -1,34 +1,16 @@
-# Large MD trajectory / binary files (archived separately on Zenodo, not in Git)
 *.xtc
 *.trr
-*.edr
 *.cpt
+*.edr
 *.tpr
-*.log
-
-# Full CHARMM36 parameter sets (identical across all systems, ~100 files each; keep one
-# reference copy under parameters/toppar_reference/ instead of duplicating per-system)
+*.gro
 toppar/
-
-# GROMACS backup files
-\#*\#
-*~
-
-# Large coordinate/structure intermediates (keep only final, documented inputs)
-step2*.pdb
-step2*.psf
-step2*.crd
-step3_pbcsetup*
-step1_pdbreader*
-
-# Python
-__pycache__/
-*.pyc
-
-# OS
+foldx_20261231
+foldx5/
+rotabase.txt
+*.log
+slurm-*.out
+logs/
+#*#
 .DS_Store
-Thumbs.db
-
-# Editor
-.vscode/
-*.swp
+__pycache__/
