@@ -44,6 +44,11 @@ producing `topol_junction_v2.top`.
 confirmed continuous after repair (C155–N156 = 1.30–1.34 Å in production
 trajectories).
 
+**Archived originals.** The unrepaired builds are retained on the analysis
+cluster as `*_BUGGY_v1` directories. Box vectors and coordinates are identical
+between `_BUGGY_v1` and `_v2` — the repair altered topology only — so any
+number from the first analysis round can be traced to its source.
+
 **Scripts.** `scripts/topology_fixes/fix_chain_break.py`,
 `scripts/topology_fixes/fix_junction_batch.py`
 

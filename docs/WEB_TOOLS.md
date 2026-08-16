@@ -73,15 +73,21 @@ built here.
 | Water model | TIP3P |
 | Ion concentration | 0.15 M KCl |
 | Temperature | 298.15 K |
-| Box type | Cubic. 6.8 nm edge for *P. sativum*, XX nm for *O. spinosa* |
-| Box edge distance | approximately 1.19 nm from the protein surface |
+| Box type | Cubic. 7.36–7.37 nm edge for *P. sativum*, 10.45–10.47 nm for *O. spinosa* |
+| Box edge distance | approximately 1.47 nm from the protein surface (*P. sativum*) |
 | Ion placement method | Not recorded; CHARMM-GUI v3.7 default. 31 K⁺ and 25 Cl⁻ placed |
 | Histidine protonation | **HSD for all histidines (server default)** |
-| Solvent molecules | 8986 TIP3P |
+| Solvent molecules | 8971–8993 TIP3P (*P. sativum* systems) |
 | Counter-ions | 31 K⁺, 25 Cl⁻ |
 | Heme parameterisation | Bonded model, standard heme patch |
 | Date of build | 2026-07-28 |
 | CHARMM-GUI version | 3.7 |
+
+**Box dimensions are read from the production input files** (`step3_input_fixed.gro`,
+`step3_input_junction_v2.gro`), not from the raw CHARMM-GUI output. The junction
+repair altered topology only; box vectors and coordinates are identical between
+the `_BUGGY_v1` and `_v2` *O. spinosa* builds, confirming that the fix did not
+perturb the system geometry.
 
 ### Two consequences of these settings that shaped every downstream result
 
