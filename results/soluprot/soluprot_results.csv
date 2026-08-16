@@ -1,0 +1,9 @@
+species,variant,n_mutations,soluprot_score,delta_vs_wt,direction,agrees_with_a4d
+P_sativum,WT,0,0.804,0.000,reference,
+P_sativum,V53T,1,0.820,0.016,improved,yes
+P_sativum,V83T,1,0.808,0.004,improved,yes
+P_sativum,V53T+V83T,2,0.817,0.013,improved,yes
+O_spinosa,WT,0,0.780,0.000,reference,
+O_spinosa,L43W,1,0.766,-0.014,worse,yes
+O_spinosa,F125W,1,0.794,0.014,improved,yes
+O_spinosa,L43W+F125W,2,0.778,-0.002,neutral,yes

@@ -124,6 +124,149 @@ a disordered tail and is not.
 
 ---
 
+## 2b. pH Dependence and Host Comparison
+
+Aggrescan4D computes each job across pH 4.0–9.0. Reference points: yeast
+cytosol approximately 7.0 (*Pichia pastoris*, the intended host); *E. coli*
+cytosol approximately 7.6, nearest scan point 7.5.
+
+**The Max score is blind to these mutations.** In *O. spinosa* it is identical
+across all four variants at every pH point, because the highest-scoring residue
+is V4 in the disordered N-terminal tail, which no mutation touches. In
+*P. sativum* it shifts by at most 0.006. The server recommends Max for globular
+proteins, but that recommendation does not hold when the maximum lies outside
+the mutated region. Average score is used below.
+
+### Delta versus wild type, Average score
+
+| Variant | pH 7.0 (yeast) | pH 7.5 (*E. coli*) | Shift | Sign across pH 4–9 |
+|---|---|---|---|---|
+| Pea V53T+V83T | −0.0431 | −0.0420 | +0.0011 | constant |
+| Pea V83T | −0.0293 | −0.0291 | +0.0002 | constant |
+| Pea V53T | −0.0133 | −0.0121 | +0.0012 | constant |
+| Spinosa F125W | −0.0117 | −0.0116 | +0.0001 | constant |
+| Spinosa L43W | +0.0239 | +0.0265 | +0.0026 | constant |
+| Spinosa double | +0.0258 | +0.0276 | +0.0018 | constant |
+
+Additivity is reproduced independently in this module: in *P. sativum*,
+−0.0133 + −0.0293 = −0.0426 against −0.0431 observed. The *O. spinosa*
+antagonism is likewise reproduced: −0.0117 + +0.0239 = +0.0122 against +0.0258
+observed.
+
+### Host comparison
+
+The benefit of each mutation is essentially pH-independent. The largest shift
+between the two host conditions is 0.0026, against deltas up to 0.043. **The
+same variant recommendation applies to both hosts.**
+
+The proteins themselves, however, are predicted to be more aggregation-prone at
+higher pH, both reaching a minimum near pH 6.5.
+
+| Wild type | pH 7.0 | pH 7.5 | Change |
+|---|---|---|---|
+| *P. sativum* | −1.1545 | −1.1029 | +0.0516 |
+| *O. spinosa* | −1.3252 | −1.2357 | +0.0895 |
+
+**The host shift costs more than the mutations gain.** The pea double mutant at
+pH 7.5 scores −1.1449, marginally worse than the wild type at pH 7.0 (−1.1545).
+On this metric, moving the engineered variant from *Pichia* to *E. coli* would
+forfeit the benefit obtained by mutation.
+
+**Caveat.** This rests on the Average score. Max gives the opposite direction
+for *O. spinosa* (1.8142 at pH 7.0 against 1.7944 at pH 7.5). The two metrics
+disagree on host selection. Average is weighted more heavily here because Max
+does not respond to the mutations at all, but this is a judgement rather than a
+settled result.
+
+Data: `results/aggrescan4d/a4d_ph_scan.csv`; raw tables in
+`results/aggrescan4d/ph_scan/`.
+
+---
+
+## 2c. Sequence-Based Solubility Prediction (SoluProt)
+
+An independent check using a method with no access to structure. SoluProt is
+trained on soluble-expression data from *E. coli*, making it directly relevant
+to the host comparison. Higher scores indicate higher predicted solubility.
+
+Protein-Sol, the tool originally intended for this step, was unavailable on
+both attempts (server error: `No space left on device`).
+
+| Species | Variant | SoluProt | Δ vs WT |
+|---|---|---|---|
+| *P. sativum* | WT | 0.804 | — |
+| | V53T | 0.820 | +0.016 |
+| | V83T | 0.808 | +0.004 |
+| | V53T+V83T | 0.817 | +0.013 |
+| *O. spinosa* | WT | 0.780 | — |
+| | L43W | 0.766 | −0.014 |
+| | F125W | 0.794 | +0.014 |
+| | L43W+F125W | 0.778 | −0.002 |
+
+### Agreement with the structure-based analysis
+
+The sign of every effect matches Aggrescan4D:
+
+| Variant | SoluProt | Aggrescan4D | Agreement |
+|---|---|---|---|
+| Pea, all three | improved | improved | yes |
+| Spinosa L43W | worse | worse | yes |
+| Spinosa F125W | improved | improved | yes |
+| Spinosa double | ≈ neutral | ≈ neutral | yes |
+
+This is a meaningful independent confirmation. SoluProt uses sequence alone and
+a training set drawn from bacterial expression, yet reproduces the same
+qualitative conclusion — most notably the *O. spinosa* pattern in which L43W is
+detrimental, F125W beneficial, and the double mutant cancels.
+
+### Where the two methods disagree
+
+**Ranking within *P. sativum* is close to reversed.** SoluProt places V53T
+(+0.016) ahead of the double mutant (+0.013) and well ahead of V83T (+0.004);
+Aggrescan4D ranks the double mutant first and V83T second, with V53T last.
+
+The likely explanation is structural. V53T and V83T are the same substitution
+(valine to threonine); a sequence-based predictor can distinguish them only
+through local sequence context. The relevant difference is three-dimensional:
+V83 is 70.9 % solvent-exposed and the highest-scoring aggregation hotspot in the
+protein, while V53 is 47.8 % exposed and not a hotspot at all. SoluProt cannot
+access this. For a target whose value derives from surface exposure, that is a
+fundamental limitation, and the structure-based ranking is given more weight
+here.
+
+**Cross-species direction is opposite.** SoluProt predicts *P. sativum* (0.804)
+to be more soluble than *O. spinosa* (0.780); Aggrescan4D's average score gives
+the reverse. Comparing two different proteins is the least reliable use of
+either tool, and no cross-species conclusion is drawn from these data.
+
+### Resolution caveat
+
+All eight values fall between 0.766 and 0.820, and all lie well above the 0.5
+classification threshold — SoluProt predicts every variant to be soluble. The
+differences between them are 0.004 to 0.016. SoluProt is a classifier rather
+than a calibrated quantitative scale, and it is not established that a
+difference of this size is resolvable. **The signs are reported; the precise
+ranking is not.**
+
+---
+
+## 2d. Convergence Across Methods
+
+Four independent lines of evidence, with different physics and different
+training data, agree on the *O. spinosa* result:
+
+| Method | L43W | F125W | Double |
+|---|---|---|---|
+| MD structural metrics | worse (d = 2.38 for double) | neutral | worst |
+| FoldX ΔΔG | +1.42 destabilising | +0.37 borderline | +1.91 destabilising |
+| Aggrescan4D | +0.383 worse | −2.095 better | −0.068 neutral |
+| SoluProt | −0.014 worse | +0.014 better | −0.002 neutral |
+
+For *P. sativum*, three methods agree that all three variants are beneficial or
+neutral at no stability cost; they differ only on which single mutation
+contributes most.
+
+
 ## 3. Structural Metrics — Replicated MD
 
 Mean ± standard deviation across three replicates, structured core, all-atom
