@@ -1,14 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 906" width="1160" height="906" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 1046" width="1160" height="1046" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
 
+  <rect x="0" y="0" width="1160" height="1046" rx="8" fill="#ffffff" stroke="#dde3ea" stroke-width="1"/>
 
-  <rect x="0" y="0" width="1160" height="906" rx="8" fill="#ffffff" stroke="#dde3ea" stroke-width="1"/>
-
-  <!-- ══ HEADER ══ -->
   <text x="30" y="40" font-size="21" font-weight="700" fill="#16202c">Leghemoglobin Variant Assessment Pipeline</text>
   <text x="30" y="60" font-size="12.5" fill="#5f7185">Replicated molecular dynamics, folding free energy, and structure-based aggregation prediction across six engineered variants</text>
   <line x1="30" y1="72" x2="1130" y2="72" stroke="#e6ebf0" stroke-width="1"/>
 
-  <!-- ══ STAGE 1 — INPUTS ══ -->
   <text x="30" y="98" font-size="10" font-weight="700" fill="#8899a8" letter-spacing="1.1">STRUCTURE SOURCES</text>
 
   <rect x="30" y="108" width="340" height="80" rx="6" fill="#EDF2F8" stroke="#4A6FA5" stroke-width="1.2"/>
@@ -33,7 +30,6 @@
   <line x1="940" y1="188" x2="940" y2="206" stroke="#8899a8" stroke-width="1.6"/>
   <path d="M935 205 L945 205 L940 215 Z" fill="#8899a8"/>
 
-  <!-- ══ STAGE 2 — PREPARATION ══ -->
   <text x="30" y="234" font-size="10" font-weight="700" fill="#8899a8" letter-spacing="1.1">SYSTEM PREPARATION</text>
 
   <rect x="30" y="244" width="252" height="78" rx="6" fill="#F7F8FA" stroke="#c3cdd8" stroke-width="1"/>
@@ -47,7 +43,7 @@
   <text x="326" y="302" font-size="10.5" fill="#5f7185">Common reference frame verified</text>
 
   <rect x="594" y="244" width="252" height="78" rx="6" fill="#F7F8FA" stroke="#c3cdd8" stroke-width="1"/>
-  <text x="608" y="266" font-size="12" font-weight="700" fill="#16202c">CHARMM-GUI</text>
+  <text x="608" y="266" font-size="12" font-weight="700" fill="#16202c">CHARMM-GUI v3.7</text>
   <text x="608" y="284" font-size="10.5" fill="#5f7185">CHARMM36m  ·  TIP3P</text>
   <text x="608" y="302" font-size="10.5" fill="#5f7185">0.15 M KCl  ·  298.15 K</text>
 
@@ -62,10 +58,10 @@
   <path d="M584 278 L584 288 L594 283 Z" fill="#c3cdd8"/>
   <line x1="846" y1="283" x2="867" y2="283" stroke="#c3cdd8" stroke-width="1.6"/>
   <path d="M866 278 L866 288 L876 283 Z" fill="#c3cdd8"/>
+
   <line x1="580" y1="322" x2="580" y2="340" stroke="#8899a8" stroke-width="1.6"/>
   <path d="M575 339 L585 339 L580 349 Z" fill="#8899a8"/>
 
-  <!-- ══ STAGE 3 — SIMULATION ══ -->
   <rect x="30" y="352" width="1100" height="74" rx="6" fill="#16202c"/>
   <text x="52" y="380" font-size="14" font-weight="700" fill="#ffffff">Production molecular dynamics</text>
   <text x="52" y="402" font-size="11.5" fill="#a8b8c8">GROMACS 2023.4   ·   13 systems  ×  3 independent replicates  ×  100 ns</text>
@@ -75,9 +71,8 @@
   <line x1="580" y1="426" x2="580" y2="444" stroke="#8899a8" stroke-width="1.6"/>
   <path d="M575 443 L585 443 L580 453 Z" fill="#8899a8"/>
 
-  <!-- ══ STAGE 4 — QUALITY CONTROL ══ -->
-  <rect x="30" y="456" width="1100" height="92" rx="6" fill="#FDF4F2" stroke="#D9A79E" stroke-width="1.2"/>
-  <rect x="30" y="456" width="4.5" height="92" rx="2" fill="#B03A2E"/>
+  <rect x="30" y="456" width="1100" height="112" rx="6" fill="#FDF4F2" stroke="#D9A79E" stroke-width="1.2"/>
+  <rect x="30" y="456" width="4.5" height="112" rx="2" fill="#B03A2E"/>
   <text x="52" y="479" font-size="12.5" font-weight="700" fill="#8E2E24">Quality control gate  —  artefacts detected, corrected, and documented</text>
 
   <text x="52" y="503" font-size="10.5" font-weight="700" fill="#8E2E24">Unrepaired chain break</text>
@@ -92,70 +87,85 @@
   <text x="800" y="520" font-size="10.5" fill="#7d5c56">Species difference p = 1.3 × 10⁻⁵</text>
   <text x="800" y="537" font-size="10.5" fill="#7d5c56">Recomputed on core: p ≈ 0.73  →  withdrawn</text>
 
-  <path d="M580 548 L580 566 L206 566 L206 586" fill="none" stroke="#8899a8" stroke-width="1.6"/>
-  <path d="M201 585 L211 585 L206 595 Z" fill="#8899a8"/>
-  <line x1="580" y1="548" x2="580" y2="586" stroke="#8899a8" stroke-width="1.6"/>
-  <path d="M575 585 L585 585 L580 595 Z" fill="#8899a8"/>
-  <path d="M580 548 L580 566 L954 566 L954 586" fill="none" stroke="#8899a8" stroke-width="1.6"/>
-  <path d="M949 585 L959 585 L954 595 Z" fill="#8899a8"/>
+  <text x="52" y="558" font-size="10.5" fill="#7d5c56">Oxygen-bound systems set aside: heme and O₂ are harmonically restrained, and the distal histidine was built as HSD rather than HSE</text>
 
-  <!-- ══ STAGE 5 — THREE ANALYSES ══ -->
-  <text x="30" y="588" font-size="10" font-weight="700" fill="#8899a8" letter-spacing="1.1">PARALLEL ASSESSMENT</text>
+  <path d="M580 568 L580 586 L206 586 L206 604" fill="none" stroke="#8899a8" stroke-width="1.6"/>
+  <path d="M201 603 L211 603 L206 613 Z" fill="#8899a8"/>
+  <line x1="580" y1="568" x2="580" y2="604" stroke="#8899a8" stroke-width="1.6"/>
+  <path d="M575 603 L585 603 L580 613 Z" fill="#8899a8"/>
+  <path d="M580 568 L580 586 L954 586 L954 604" fill="none" stroke="#8899a8" stroke-width="1.6"/>
+  <path d="M949 603 L959 603 L954 613 Z" fill="#8899a8"/>
 
-  <!-- Column 1 — structural -->
-  <rect x="30" y="600" width="352" height="196" rx="6" fill="#ffffff" stroke="#B9AECD" stroke-width="1.2"/>
-  <rect x="30" y="600" width="352" height="32" rx="6" fill="#6B5B95"/>
-  <rect x="30" y="620" width="352" height="12" fill="#6B5B95"/>
-  <text x="46" y="621" font-size="12" font-weight="700" fill="#ffffff">Structural stability  ·  MD</text>
-  <text x="46" y="654" font-size="10.5" fill="#5f7185">Nine independent metrics on the</text>
-  <text x="46" y="670" font-size="10.5" fill="#5f7185">structured core: RMSD, RMSF, Rg,</text>
-  <text x="46" y="686" font-size="10.5" fill="#5f7185">SASA, H-bonds, helix content</text>
-  <line x1="46" y1="700" x2="366" y2="700" stroke="#ece8f2" stroke-width="1"/>
-  <text x="46" y="722" font-size="13" font-weight="700" fill="#4A3D6B">No significant effect</text>
-  <text x="46" y="742" font-size="10.5" fill="#5f7185">2 of 54 comparisons below p = 0.05,</text>
-  <text x="46" y="758" font-size="10.5" fill="#5f7185">against 2.7 expected by chance</text>
-  <text x="46" y="780" font-size="10.5" fill="#8899a8">Helix content 79–81 % throughout</text>
+  <text x="30" y="606" font-size="10" font-weight="700" fill="#8899a8" letter-spacing="1.1">PARALLEL ASSESSMENT</text>
 
-  <!-- Column 2 — stability -->
-  <rect x="404" y="600" width="352" height="196" rx="6" fill="#ffffff" stroke="#A7C4B0" stroke-width="1.2"/>
-  <rect x="404" y="600" width="352" height="32" rx="6" fill="#4A7C59"/>
-  <rect x="404" y="620" width="352" height="12" fill="#4A7C59"/>
-  <text x="420" y="621" font-size="12" font-weight="700" fill="#ffffff">Folding free energy  ·  FoldX</text>
-  <text x="420" y="654" font-size="10.5" fill="#5f7185">BuildModel, 5 runs per variant</text>
-  <text x="420" y="670" font-size="10.5" fill="#5f7185">Positive ΔΔG = destabilising</text>
-  <text x="420" y="686" font-size="10.5" fill="#5f7185">Method accuracy ≈ 0.5 kcal/mol</text>
-  <line x1="420" y1="700" x2="740" y2="700" stroke="#e4efe7" stroke-width="1"/>
-  <text x="420" y="722" font-size="11.5" font-weight="700" fill="#2F5D42">P. sativum   +0.004 to +0.102</text>
-  <text x="420" y="739" font-size="10.5" fill="#5f7185">neutral — mutations are energetically free</text>
-  <text x="420" y="762" font-size="11.5" font-weight="700" fill="#8E2E24">O. spinosa   L43W +1.42, double +1.91</text>
-  <text x="420" y="779" font-size="10.5" fill="#5f7185">genuinely destabilising</text>
+  <rect x="30" y="618" width="352" height="196" rx="6" fill="#ffffff" stroke="#B9AECD" stroke-width="1.2"/>
+  <rect x="30" y="618" width="352" height="32" rx="6" fill="#6B5B95"/>
+  <rect x="30" y="638" width="352" height="12" fill="#6B5B95"/>
+  <text x="46" y="639" font-size="12" font-weight="700" fill="#ffffff">Structural stability  ·  MD</text>
+  <text x="46" y="672" font-size="10.5" fill="#5f7185">Nine independent metrics on the</text>
+  <text x="46" y="688" font-size="10.5" fill="#5f7185">structured core: RMSD, RMSF, Rg,</text>
+  <text x="46" y="704" font-size="10.5" fill="#5f7185">SASA, H-bonds, helix content</text>
+  <line x1="46" y1="718" x2="366" y2="718" stroke="#ece8f2" stroke-width="1"/>
+  <text x="46" y="740" font-size="13" font-weight="700" fill="#4A3D6B">No significant effect</text>
+  <text x="46" y="760" font-size="10.5" fill="#5f7185">2 of 54 comparisons below p = 0.05,</text>
+  <text x="46" y="776" font-size="10.5" fill="#5f7185">against 2.7 expected by chance</text>
+  <text x="46" y="798" font-size="10.5" fill="#8899a8">Helix content 79–81 % throughout</text>
 
-  <!-- Column 3 — aggregation -->
-  <rect x="778" y="600" width="352" height="196" rx="6" fill="#ffffff" stroke="#E0B49B" stroke-width="1.2"/>
-  <rect x="778" y="600" width="352" height="32" rx="6" fill="#C1663D"/>
-  <rect x="778" y="620" width="352" height="12" fill="#C1663D"/>
-  <text x="794" y="621" font-size="12" font-weight="700" fill="#ffffff">Aggregation  ·  Aggrescan4D</text>
-  <text x="794" y="654" font-size="10.5" fill="#5f7185">pH 7.0, yeast cytosol, static mode</text>
-  <text x="794" y="670" font-size="10.5" fill="#5f7185">Mutations applied server-side</text>
-  <text x="794" y="686" font-size="10.5" fill="#5f7185">More negative = less aggregation-prone</text>
-  <line x1="794" y1="700" x2="1114" y2="700" stroke="#f7e8df" stroke-width="1"/>
-  <text x="794" y="722" font-size="11.5" font-weight="700" fill="#9B4A26">P. sativum   −2.40  /  −6.38  /  −8.78</text>
-  <text x="794" y="739" font-size="10.5" fill="#5f7185">additive to three decimal places</text>
-  <text x="794" y="762" font-size="11.5" font-weight="700" fill="#5f7185">O. spinosa   +0.38  /  −2.10  /  −0.07</text>
-  <text x="794" y="779" font-size="10.5" fill="#5f7185">antagonistic: the double mutant cancels</text>
+  <rect x="404" y="618" width="352" height="196" rx="6" fill="#ffffff" stroke="#A7C4B0" stroke-width="1.2"/>
+  <rect x="404" y="618" width="352" height="32" rx="6" fill="#4A7C59"/>
+  <rect x="404" y="638" width="352" height="12" fill="#4A7C59"/>
+  <text x="420" y="639" font-size="12" font-weight="700" fill="#ffffff">Folding free energy  ·  FoldX</text>
+  <text x="420" y="672" font-size="10.5" fill="#5f7185">BuildModel, 5 runs per variant</text>
+  <text x="420" y="688" font-size="10.5" fill="#5f7185">Positive ΔΔG = destabilising</text>
+  <text x="420" y="704" font-size="10.5" fill="#5f7185">Method accuracy ≈ 0.5 kcal/mol</text>
+  <line x1="420" y1="718" x2="740" y2="718" stroke="#e4efe7" stroke-width="1"/>
+  <text x="420" y="740" font-size="11.5" font-weight="700" fill="#2F5D42">P. sativum   +0.004 to +0.102</text>
+  <text x="420" y="757" font-size="10.5" fill="#5f7185">neutral — mutations are energetically free</text>
+  <text x="420" y="780" font-size="11.5" font-weight="700" fill="#8E2E24">O. spinosa   L43W +1.42, double +1.91</text>
+  <text x="420" y="797" font-size="10.5" fill="#5f7185">genuinely destabilising</text>
 
-  <path d="M206 796 L206 818 L580 818 L580 832" fill="none" stroke="#8899a8" stroke-width="1.6"/>
-  <line x1="580" y1="796" x2="580" y2="818" stroke="#8899a8" stroke-width="1.6"/>
-  <path d="M954 796 L954 818 L580 818 L580 832" fill="none" stroke="#8899a8" stroke-width="1.6"/>
-  <path d="M575 831 L585 831 L580 841 Z" fill="#8899a8"/>
+  <rect x="778" y="618" width="352" height="196" rx="6" fill="#ffffff" stroke="#E0B49B" stroke-width="1.2"/>
+  <rect x="778" y="618" width="352" height="32" rx="6" fill="#C1663D"/>
+  <rect x="778" y="638" width="352" height="12" fill="#C1663D"/>
+  <text x="794" y="639" font-size="12" font-weight="700" fill="#ffffff">Aggregation  ·  Aggrescan4D</text>
+  <text x="794" y="672" font-size="10.5" fill="#5f7185">pH 7.0 yeast cytosol, plus a 4.0–9.0 scan</text>
+  <text x="794" y="688" font-size="10.5" fill="#5f7185">Mutations applied server-side</text>
+  <text x="794" y="704" font-size="10.5" fill="#5f7185">More negative = less aggregation-prone</text>
+  <line x1="794" y1="718" x2="1114" y2="718" stroke="#f7e8df" stroke-width="1"/>
+  <text x="794" y="740" font-size="11.5" font-weight="700" fill="#9B4A26">P. sativum   −2.40  /  −6.38  /  −8.78</text>
+  <text x="794" y="757" font-size="10.5" fill="#5f7185">additive to three decimal places</text>
+  <text x="794" y="780" font-size="11.5" font-weight="700" fill="#5f7185">O. spinosa   +0.38  /  −2.10  /  −0.07</text>
+  <text x="794" y="797" font-size="10.5" fill="#5f7185">antagonistic: the double mutant cancels</text>
 
-  <!-- ══ STAGE 6 — RECOMMENDATIONS ══ -->
-  <rect x="30" y="844" width="546" height="46" rx="6" fill="#F2F7F3" stroke="#4A7C59" stroke-width="1.4"/>
-  <text x="48" y="864" font-size="12.5" font-weight="700" fill="#2F5D42">P. sativum  →  V53T + V83T</text>
-  <text x="48" y="880" font-size="10.5" fill="#4a6a55">V83 was the highest-scoring aggregation hotspot; now neutralised at zero stability cost</text>
+  <path d="M206 814 L206 830 L580 830 L580 844" fill="none" stroke="#8899a8" stroke-width="1.6"/>
+  <line x1="580" y1="814" x2="580" y2="830" stroke="#8899a8" stroke-width="1.6"/>
+  <path d="M954 814 L954 830 L580 830 L580 844" fill="none" stroke="#8899a8" stroke-width="1.6"/>
+  <path d="M575 843 L585 843 L580 853 Z" fill="#8899a8"/>
 
-  <rect x="584" y="844" width="546" height="46" rx="6" fill="#FBF4F0" stroke="#C1663D" stroke-width="1.4"/>
-  <text x="602" y="864" font-size="12.5" font-weight="700" fill="#9B4A26">O. spinosa  →  F125W only</text>
-  <text x="602" y="880" font-size="10.5" fill="#8a5c42">The double mutant pays the full +1.91 kcal/mol penalty for no aggregation benefit</text>
+  <rect x="30" y="856" width="1100" height="76" rx="6" fill="#F4F7FA" stroke="#4A6FA5" stroke-width="1.2"/>
+  <rect x="30" y="856" width="4.5" height="76" rx="2" fill="#2B4A73"/>
+  <text x="52" y="879" font-size="12.5" font-weight="700" fill="#2B4A73">Cross-validation  —  four independent methods, no contradictions</text>
+
+  <text x="52" y="901" font-size="10.5" font-weight="700" fill="#2B4A73">SoluProt, sequence-based</text>
+  <text x="52" y="918" font-size="10.5" fill="#4e6580">Trained on E. coli data; reproduces the sign of all six effects</text>
+
+  <text x="440" y="901" font-size="10.5" font-weight="700" fill="#2B4A73">ΔΔG cross-check</text>
+  <text x="440" y="918" font-size="10.5" fill="#4e6580">A4D internal vs standalone FoldX: max gap 0.118 kcal/mol</text>
+
+  <text x="840" y="901" font-size="10.5" font-weight="700" fill="#2B4A73">pH scan 4.0–9.0</text>
+  <text x="840" y="918" font-size="10.5" fill="#4e6580">Mutation effects are pH-independent</text>
+
+  <line x1="580" y1="932" x2="580" y2="950" stroke="#8899a8" stroke-width="1.6"/>
+  <path d="M575 949 L585 949 L580 959 Z" fill="#8899a8"/>
+
+  <rect x="30" y="962" width="546" height="62" rx="6" fill="#F2F7F3" stroke="#4A7C59" stroke-width="1.4"/>
+  <text x="48" y="982" font-size="12.5" font-weight="700" fill="#2F5D42">P. sativum  →  V53T + V83T</text>
+  <text x="48" y="1000" font-size="10.5" fill="#4a6a55">V83 was the top aggregation hotspot; now neutralised at zero stability cost</text>
+  <text x="48" y="1016" font-size="10" fill="#6b8676">Keep expression in Pichia — the pH shift to E. coli costs more than the mutations gain</text>
+
+  <rect x="584" y="962" width="546" height="62" rx="6" fill="#FBF4F0" stroke="#C1663D" stroke-width="1.4"/>
+  <text x="602" y="982" font-size="12.5" font-weight="700" fill="#9B4A26">O. spinosa  →  F125W only</text>
+  <text x="602" y="1000" font-size="10.5" fill="#8a5c42">The double mutant pays the full +1.91 kcal/mol penalty for no aggregation benefit</text>
+  <text x="602" y="1016" font-size="10" fill="#a87a5e">L43W is detrimental on every measure and should be dropped</text>
 
 </svg>
