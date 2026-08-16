@@ -1,3 +1,15 @@
+# WARNING - SUPERSEDED. RESULTS FROM THIS SCRIPT WERE WITHDRAWN.
+#
+# This script produced conclusions that were later retracted:
+#   - variant ranking based on a single replicate
+#   - 'stability' of Fe-O1 and Fe-His distances, which are harmonic
+#     restraints written into the topology, not simulation results
+#   - a species difference arising from superposition on a disordered tail
+#
+# See docs/CORRECTIONS.md and docs/KNOWN_ISSUES.md items 4, 5 and 7.
+# Superseded by scripts/analysis/heme/hem_rmsd_core.py
+# Retained only so retracted numbers can be traced to their source.
+
 """
 Heme-group RMSD relative to the backbone-aligned protein, computed over the
 full 100 ns production trajectory of each system.
