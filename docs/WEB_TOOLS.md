@@ -73,13 +73,15 @@ built here.
 | Water model | TIP3P |
 | Ion concentration | 0.15 M KCl |
 | Temperature | 298.15 K |
-| Box type | `[TO BE FILLED]` |
-| Box edge distance | `[TO BE FILLED]` |
-| Ion placement method | `[TO BE FILLED]` |
+| Box type | Cubic. 6.8 nm edge for *P. sativum*, XX nm for *O. spinosa* |
+| Box edge distance | approximately 1.19 nm from the protein surface |
+| Ion placement method | Not recorded; CHARMM-GUI v3.7 default. 31 K⁺ and 25 Cl⁻ placed |
 | Histidine protonation | **HSD for all histidines (server default)** |
+| Solvent molecules | 8986 TIP3P |
+| Counter-ions | 31 K⁺, 25 Cl⁻ |
 | Heme parameterisation | Bonded model, standard heme patch |
-| Date of build | `[TO BE FILLED]` |
-| CHARMM-GUI version | `[TO BE FILLED]` |
+| Date of build | 2026-07-28 |
+| CHARMM-GUI version | 3.7 |
 
 ### Two consequences of these settings that shaped every downstream result
 
