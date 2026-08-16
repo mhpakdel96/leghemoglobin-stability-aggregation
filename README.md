@@ -5,6 +5,8 @@ leghemoglobin from *Pisum sativum* and *Ononis spinosa*, combining replicated
 molecular dynamics, FoldX folding free-energy calculations, and structure-based
 aggregation prediction.
 
+![Analysis pipeline: structure sources, system preparation, replicated MD, quality control, three parallel assessments, and final recommendations](docs/figures/pipeline.png)
+
 > **Scope correction.** This repository was originally titled *"Molecular
 > Dynamics Analysis of Heme- and Oxygen-Binding Stability."* That framing was
 > withdrawn after the heme cofactor was found to be harmonically restrained to
