@@ -253,7 +253,7 @@ Aggrescan4D web server, accessed 2026-08-14.
 | pH | 7.0 | Yeast cytosol; intracellular expression in *Pichia pastoris* |
 | Mode | Static | Dynamic-mode jobs did not complete |
 | Analysis distance | 10 Å | Server default |
-| Globular-region analysis | Enabled | Excludes disordered termini |
+| Globular-region analysis | Enabled (alphaCutter) | Ran without trimming any residues; disordered termini remained in the analysis |
 | Mutations | Applied server-side | Wild type and mutant follow an identical path |
 | Input structures | FoldX-repaired wild types | Shared starting point with the ΔΔG calculation |
 

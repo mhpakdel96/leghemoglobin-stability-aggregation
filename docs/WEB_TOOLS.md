@@ -143,7 +143,7 @@ The primary tool for the project's solubility question.
 | Chain(s) | A | Only chain in both models |
 | pH calculations | Yes, **pH 7.0** | Yeast cytosolic pH; intracellular expression |
 | Stability calculations | Yes | Provides an internal cross-check against FoldX |
-| Analysis of globular regions | Yes | Excludes disordered termini |
+| Analysis of globular regions | Yes (alphaCutter) | Ran, but reported `no changes made` — no residues were trimmed |
 | Dynamic mode | **No** | Static mode; dynamic jobs never left the queue |
 | Distance of aggregation analysis | 10 Å | Server default |
 | Improve solubility (evolutionary) | No | Automated design mode, not the question asked |
@@ -228,6 +228,42 @@ V83 was the single highest-scoring residue in the entire pea protein, and the
 V83T substitution moved it across the zero threshold from aggregation-prone
 to solubility-promoting. The global maximum consequently shifted from V83
 (+1.1027) to V104 (+1.0515).
+
+**The globular-region filter did not trim anything.** The `Project details`
+page of every job reports `alphaCutter usage: Used: no changes made`. The
+disordered N-terminal segment of *O. spinosa* (residues 1–13, pLDDT below 70)
+therefore remained in the aggregation analysis, which is why V4 (+1.9501)
+carries the highest score in that protein. Scores for *O. spinosa* include a
+contribution from a region that the MD analysis deliberately excluded. Since
+the contribution is identical across all four *O. spinosa* jobs, it cancels in
+the mutant-versus-wild-type comparison but inflates the absolute values.
+
+**Independent validation of the stability calculation.** Aggrescan4D applies
+mutations with FoldX internally and reports its own energy difference, giving a
+free cross-check against the standalone FoldX runs in this repository.
+
+| Variant | A4D internal (single run) | Standalone FoldX (mean of 5) | Difference |
+|---|---|---|---|
+| V53T | 0.1475 | 0.102 ± 0.029 | +0.046 |
+| V83T | 0.0056 | 0.004 ± 0.0001 | +0.002 |
+| V53T+V83T | 0.1541 | 0.100 ± 0.029 | +0.054 |
+| L43W | 1.5363 | 1.418 ± 0.112 | +0.118 |
+| F125W | 0.4490 | 0.374 ± 0.004 | +0.075 |
+| L43W+F125W | 1.8659 | 1.906 ± 0.222 | −0.040 |
+
+The largest discrepancy is 0.118 kcal/mol, under a quarter of the 0.5 kcal/mol
+accuracy of the method. The ranking is identical and no classification changes.
+Five of six A4D values sit slightly above the five-run mean, consistent with a
+single run not reaching as favourable a side-chain packing.
+
+The server independently flagged `CAUTION: Your mutation/s can destabilize the
+protein structure` for L43W and the *O. spinosa* double mutant only — exactly
+the two variants classified here as destabilising.
+
+**Inconsistent alphaCutter setting.** The `a3d_pea_WT` job reports
+`alphaCutter usage: No`, while the other seven report `Used: no changes made`.
+Since alphaCutter trimmed nothing in any job, this has no effect on the
+results, but it is recorded for completeness.
 
 ### 3.6 Limitations of this analysis
 

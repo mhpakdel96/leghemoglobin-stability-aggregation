@@ -1,0 +1,7 @@
+species,variant,a4d_internal_foldx,standalone_foldx_mean,standalone_foldx_sd,difference,a4d_caution_flag
+P_sativum,V53T,0.147518,0.102,0.029,0.045518,no
+P_sativum,V83T,0.00559008,0.004,0.0001,0.00159008,no
+P_sativum,V53T+V83T,0.154142,0.100,0.029,0.054142,no
+O_spinosa,L43W,1.53627,1.418,0.112,0.11827,yes
+O_spinosa,F125W,0.449024,0.374,0.004,0.075024,no
+O_spinosa,L43W+F125W,1.86585,1.906,0.222,-0.04015,yes
