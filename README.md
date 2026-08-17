@@ -81,6 +81,10 @@ structured core as the alignment reference, the difference falls from 0.60 Å to
 ΔΔG sign convention: positive = destabilising.
 A4D sign convention: more negative = less aggregation-prone.
 
+**Four independent methods agree.** Replicated MD, FoldX ΔΔG, Aggrescan4D, and
+SoluProt reproduce the same signs with no contradictions. Aggrescan4D's internal
+FoldX calculation matches the standalone runs to within 0.118 kcal/mol.
+
 Full tables, statistics, and per-metric breakdowns: [`docs/RESULTS.md`](docs/RESULTS.md).
 
 ---
@@ -98,6 +102,8 @@ Full tables, statistics, and per-metric breakdowns: [`docs/RESULTS.md`](docs/RES
 | Structural analysis | GROMACS + MDAnalysis | Restricted to the structured core |
 | Folding stability | FoldX `BuildModel`, 5 runs | Apo protein |
 | Aggregation | Aggrescan4D, pH 7.0 | Static mode, mutations applied server-side |
+| pH dependence | Aggrescan4D scan, pH 4.0–9.0 | Yeast versus *E. coli* cytosolic conditions |
+| Sequence-based solubility | SoluProt | Trained on *E. coli* soluble-expression data |
 
 Detailed parameters: [`docs/METHODS.md`](docs/METHODS.md).
 Web-server protocols and provenance: [`docs/WEB_TOOLS.md`](docs/WEB_TOOLS.md).
